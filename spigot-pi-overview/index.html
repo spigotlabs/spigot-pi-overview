@@ -1,0 +1,188 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>The Pi and I</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+
+		<style>
+			.reveal section img {
+				vertical-align: middle;
+			}
+
+			.reveal section img.plain {
+				background-color: transparent;
+			}
+
+			.whoami i {
+				margin: 0 20px;
+			}
+      .reveal div.header-left {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0;
+        margin: 0;
+      }
+      .reveal div.header-right {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 0;
+        margin: 0;
+      }
+      .reveal div.footer-left {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 0;
+        margin: 0;
+        font-size: 0.6em;
+      }
+      .reveal div.footer-right {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding: 0;
+        margin: 0;
+      }
+
+      .image-array img {
+        height: 200px;
+      }
+		</style>
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+        <div id="header" style="display: none;">
+          <div class="footer-left">@svvitale</div>
+        </div>
+
+				<section>
+					<h2>The Pi and I</h2>
+					<img class="plain" src="pi.png">
+					<div class="whoami">
+						Scott Vitale, Founder @ <img class="plain" src="spigotlabs.png" /><br/>
+						<i class="fa fa-twitter"></i> <i class="fa fa-github"></i> @svvitale <i class="fa fa-facebook-square"></i> <i class="fa fa-linkedin"></i>
+					</div>
+				</section>
+
+				<section>
+          <h2>Raspberry Pi</h2>
+          <div>
+            "... is a series of small single-board computers developed in the United Kingdom by the Raspberry Pi Foundation to promote the teaching of basic computer science in schools and in developing countries."
+          </div>
+          <div style="display: flex; justify-content: space-around; height: 150px;">
+            <img src="pi1.jpg" />
+            <img src="pi3.jpg" />
+            <img src="pi0.jpg" />
+          </div>
+        </section>
+
+        <section>
+          <img src="neo.gif" class="plain" style="height: 200px;" />
+          <h2>Nerds Minds Blown!</h2>
+          <ul class="fragment">
+            <li>Fully functional computer</li>
+            <li>Full Linux OS</li>
+            <li>HDMI + USB + Wifi</li>
+            <li>CHEAP! $35 (and now $10 for the Zero W)</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Okay, but what's it do?</h2>
+          <div class="image-array" style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+            <div class="fragment">
+              <img src="home-automation.jpg" class="plain"><br />
+              Home Automation
+            </div>
+            <div class="fragment">
+              <img src="beer-brewing.jpg" class="plain"><br />
+              Beer Brewing
+            </div>
+            <div class="fragment">
+              <img src="surveillance.gif" class="plain"><br />
+              Surveillance
+            </div>
+            <div class="fragment">
+              <img src="compute.jpg" class="plain"><br />
+              Compute Clusters
+            </div>
+            <div class="fragment">
+              <img src="united.jpg" class="plain"><br />
+              Smart Boards
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3>Now a little about <img src="spigotlabs.png" class="plain"></h3>
+          <img src="what_would_you_say_you_do_here.jpg" class="plain">
+        </section>
+
+        <section>
+          
+        </section>
+      </div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+        history: true,
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+
+		<script type="text/javascript">
+      function hideFooterOnTitleScreen() {
+        if (Reveal.isFirstSlide()) {
+          $('#header').fadeOut();
+        }
+        else {
+          $('#header').fadeIn();
+        }
+      }
+      Reveal.addEventListener( 'ready', function( event ) {
+        // event.currentSlide, event.indexh, event.indexv
+        hideFooterOnTitleScreen();
+      } );
+
+      Reveal.addEventListener( 'slidechanged', function( event ) {
+        // event.previousSlide, event.currentSlide, event.indexh, event.indexv
+        hideFooterOnTitleScreen();
+      } );
+		</script>
+	</body>
+</html>
